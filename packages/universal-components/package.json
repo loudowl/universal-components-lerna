@@ -1,21 +1,27 @@
 {
   "name": "universal-components",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
     "@storybook/react": "^3.4.7",
+    "babel-minify-webpack-plugin": "^0.3.1",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-to-json": "^3.3.4",
     "flow-bin": "^0.74.0",
+    "jest": "^23.1.0",
     "prop-types": "^15.6.1",
     "react": "^16.4.1",
+    "react-art": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-native-web": "^0.8.4"
+    "react-native-web": "^0.8.4",
+    "surge": "^0.20.1"
   },
   "peerDependencies": {
     "prop-types": ">=15",
@@ -26,6 +32,8 @@
   },
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "build": "build-storybook"
+    "build": "build-storybook",
+    "test": "jest",
+    "deploy": "yarn build && surge ./storybook-static"
   }
 }
